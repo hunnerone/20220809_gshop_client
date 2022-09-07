@@ -1,12 +1,18 @@
 <template>
-  <div id="app">13</div>
+  <div id="app">
+    <Header></Header>
+    <router-view></router-view>
+    <Footer v-show="!$route.meta.isHideFooter"></Footer>
+  </div>
 </template>
 
 <script>
+import Header from './components/Header/index.vue'
+import Footer from './components/Footer/index.vue'
 export default {
-  name: "App",
-  components: {},
-};
+  name: 'App',
+  components: { Header, Footer }
+}
 </script>
 
 <style>
@@ -16,6 +22,6 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+  /* margin-top: 60px; */
 }
 </style>
